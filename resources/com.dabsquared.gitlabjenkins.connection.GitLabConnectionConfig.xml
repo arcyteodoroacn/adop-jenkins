@@ -1,0 +1,11 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<com.dabsquared.gitlabjenkins.connection.GitLabConnectionConfig plugin="gitlab-plugin@1.2.2">
+  <connections>
+    <com.dabsquared.gitlabjenkins.connection.GitLabConnection>
+      <name>ADOP Gitlab</name>
+      <url>http://gitlab/gitlab</url>
+      <apiTokenId>gitlab-secrets-id</apiTokenId>
+      <ignoreCertificateErrors>true</ignoreCertificateErrors>
+    </com.dabsquared.gitlabjenkins.connection.GitLabConnection>
+  </connections>
+</com.dabsquared.gitlabjenkins.connection.GitLabConnectionConfig>

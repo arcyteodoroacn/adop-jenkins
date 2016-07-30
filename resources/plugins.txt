@@ -100,5 +100,5 @@ jquery-detached:1.2
 repository-connector:1.1.1
 mapdb-api:1.0.6.0
 credentials:1.24
-gitlab-plugin:1.2.5
+gitlab-plugin:1.2.2
 multiple-scms:0.6

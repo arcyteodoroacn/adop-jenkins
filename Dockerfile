@@ -5,7 +5,10 @@ MAINTAINER Nick Griffin, <nicholas.griffin>
 ENV GERRIT_HOST_NAME gerrit
 ENV GERRIT_PORT 8080
 ENV GERRIT_JENKINS_USERNAME="" GERRIT_JENKINS_PASSWORD=""
-
+ENV GITLAB_HOST_NAME gitlab
+ENV GITLAB_PORT 80
+ENV GITLAB_JENKINS_USERNAME="" GITLAB_JENKINS_PASSWORD="" GITLAB_JENKINS_TOKEN=""
+ENV GIT_REPO gerrit
 
 # Copy in configuration files
 COPY resources/plugins.txt /usr/share/jenkins/ref/
@@ -17,6 +20,7 @@ COPY resources/views/ /usr/share/jenkins/ref/init.groovy.d/
 COPY resources/m2/ /usr/share/jenkins/ref/.m2
 COPY resources/entrypoint.sh /entrypoint.sh
 COPY resources/scriptApproval.xml /usr/share/jenkins/ref/
+COPY resources/com.dabsquared.gitlabjenkins.connection.GitLabConnectionConfig.xml /usr/share/jenkins/ref/
 
 # Reprotect
 USER root
@@ -24,7 +28,7 @@ RUN chmod +x -R /usr/share/jenkins/ref/adop_scripts/ && chmod +x /entrypoint.sh
 # USER jenkins
 
 # Environment variables
-ENV ADOP_LDAP_ENABLED=true ADOP_SONAR_ENABLED=true ADOP_ANT_ENABLED=true ADOP_MAVEN_ENABLED=true ADOP_NODEJS_ENABLED=true ADOP_GERRIT_ENABLED=true
+ENV ADOP_LDAP_ENABLED=true ADOP_SONAR_ENABLED=true ADOP_ANT_ENABLED=true ADOP_MAVEN_ENABLED=true ADOP_NODEJS_ENABLED=true ADOP_GERRIT_ENABLED=true ADOP_GITLAB_ENABLED=true
 
 ENV LDAP_GROUP_NAME_ADMIN=""
 
